@@ -1,0 +1,37 @@
+body,html,td,div,span{ font-family:"宋体"; font-size:12px;margin:0;padding:0;}
+img{padding:0; margin:0; overflow:hidden;}
+/**
+*按钮样式
+**/
+.but{
+		cursor: pointer;
+		background-color: #ffffff;
+		color: #333;
+	    border-color: #CCC;
+	    border: 1px solid #dddddd;
+	    height: 24px;
+	    line-height: 24px;
+	    position: relative;
+	    float: left;
+	    padding-left:6px;
+	    padding-right:6px;
+	    margin-left: -1px;
+}
+.but:hover{
+		cursor: pointer;
+		background-color: #09C;
+	    border: 1px solid #09C;
+	    height: 24px;
+	    line-height: 24px;
+	    position: relative;
+	    float: left;
+	     padding-left:6px;
+	    padding-right:6px;
+	    margin-left: -1px;
+}
+/**
+* 输入框样式
+**/
+.text{
+	border:1px solid #AFAFAF;
+}

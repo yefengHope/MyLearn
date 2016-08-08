@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.noka.item">
+<class name="TreeBookItem" table="NK_SYS_TREEBOOK">
+<id name="tid">
+	<generator class="increment"/>
+</id>
+<property name="tpid"  />
+<property name="tname"  />
+<property name="ttext"  />
+<property name="ttype"  />
+<property name="tpx"  />
+<property name="tuser"  />
+<property name="tdept"  />
+<property name="tdate"  />
+<property name="turl"  />
+<property name="tlvie"  />
+</class>
+</hibernate-mapping>

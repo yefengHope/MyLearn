@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<filter>
+  	<filter-name>UnionLonginFilter</filter-name>
+  	<filter-class>org.noka.union.UnionLonginFilter</filter-class>
+  	<init-param>
+  	<param-name>unclass</param-name>
+  	<param-value>org.noka.union.Test</param-value>
+  	</init-param>
+</filter>
+  <filter-mapping>
+  <filter-name>UnionLonginFilter</filter-name>
+  <url-pattern>/*</url-pattern>
+</filter-mapping>
+
+	<filter>
+		<filter-name>NokaTagFile</filter-name>
+		<filter-class>org.nokatag.system.NokaTagFilter</filter-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>WEB-INF/classes/noka-config.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>xmlfilepath</param-name>
+			<param-value>WEB-INF/classes/system_config.xml</param-value>
+		</init-param>
+		<!--  
+		<init-param>
+			<param-name>ssourl</param-name>
+			<param-value>http://127.0.0.1:8080/nsso</param-value>
+		</init-param>
+		-->
+	</filter>
+	<filter-mapping>
+		<filter-name>NokaTagFile</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- hession 
+	<servlet>
+	   <servlet-name>hession</servlet-name>
+	   <servlet-class>com.caucho.hessian.server.HessianServlet</servlet-class>
+	    <init-param>
+	      <param-name>home-class</param-name>
+	      <param-value>org.noka.sso.UserUtil</param-value>
+	    </init-param>
+	    <init-param>
+	      <param-name>home-api</param-name>
+	      <param-value>org.noka.sso.UserInterface</param-value>
+	    </init-param>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>hession</servlet-name>
+	    <url-pattern>/dataserver.ser</url-pattern>
+	</servlet-mapping>
+	-->
+	<jsp-config>
+		<taglib>
+			<taglib-uri>/sys</taglib-uri>
+			<taglib-location>/WEB-INF/classes/sys.tld</taglib-location>
+		</taglib>
+	</jsp-config>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+</web-app>

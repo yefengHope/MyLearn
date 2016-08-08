@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- START SNIPPET: noka-tagDtd -->
+<!--
+   noka-tag configuration DTD.
+   Use the following DOCTYPE
+  <!DOCTYPE noka PUBLIC
+    "-//noka//DTD noka-pro Configuration 3.2//EN"
+    "language.dtd">
+-->
+<!ELEMENT language (page*)>
+<!ELEMENT page (option*)>
+<!ELEMENT option (#PCDATA)>
+<!ATTLIST page
+id CDATA #REQUIRED
+description CDATA #REQUIRED
+>
+<!ATTLIST option
+key CDATA #REQUIRED
+description CDATA #IMPLIED
+>

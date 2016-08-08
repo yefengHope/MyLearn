@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- START SNIPPET: noka-tagDtd -->
+<!--
+   noka-tag configuration DTD.
+   Use the following DOCTYPE
+  <!DOCTYPE noka PUBLIC
+    "-//noka//DTD noka-pro Configuration 3.2//EN"
+    "system_config.dtd">
+-->
+<!ELEMENT xmlconst (option*,dbtable-filters?,dbtable-deletes?,prints?,cache-files?)>
+<!ELEMENT option (#PCDATA)>
+<!ELEMENT dbtable-filters (table*)>
+<!ELEMENT prints (print*)>
+<!ELEMENT cache-files (cache-file*)>
+<!ELEMENT dbtable-deletes (dtable*)>
+<!ELEMENT table (#PCDATA)>
+<!ELEMENT print (#PCDATA)>
+<!ELEMENT cache-file (#PCDATA)>
+<!ELEMENT dtable (#PCDATA)>
+<!ATTLIST option
+key CDATA #REQUIRED
+>
+<!ATTLIST table
+key CDATA #REQUIRED
+user-field CDATA #REQUIRED
+dept-field CDATA #REQUIRED
+lang CDATA #REQUIRED
+select CDATA #IMPLIED
+>
+<!ATTLIST print
+id CDATA #REQUIRED
+class CDATA #REQUIRED
+>
+<!ATTLIST cache-file
+extension CDATA #REQUIRED
+expires CDATA #REQUIRED
+>
+<!ATTLIST dtable
+mtable CDATA #REQUIRED
+mfield CDATA #REQUIRED
+rtable CDATA #REQUIRED
+rfield CDATA #REQUIRED
+action (delete|back) #REQUIRED
+prompt CDATA #REQUIRED
+>
