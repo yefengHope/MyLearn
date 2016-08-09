@@ -148,7 +148,9 @@ public class UserAction extends BaseAction{
 		HttpServletRequest request = ServletActionContext.getRequest();
 		String SQL="SELECT USID AS "+$L("org.word.jsp.id")+",USNAME AS "+$L("org.user.jsp.usern")+", USXNAME AS "+$L("org.myuser.jsp.name")+",USSEX AS "+$L("org.myuser.jsp.sex")+",USMOBLE AS "+$L("org.myuser.jsp.moble")+",USTEL AS "+$L("org.myuser.jsp.tel")+",USEMAIL AS "+$L("org.myuser.jsp.email")+", DNAME AS "+$L("org.user.jsp.deptur")+", " +
 		"USWORK,USBORTH AS "+$L("org.myuser.jsp.bro")+",USTEXT,USPASS,USPASSWORD,DID,USSEX,USFUGLE,USFUGLE as USFUGLEN FROM NK_SYS_USERINFO ,NK_SYS_DEPT WHERE USWORK=DID ";
+		
 		request.setAttribute("sql", sqlFilter(SQL, "NK_SYS_USERINFO"));
+		
 		request.setAttribute("deptsql","SELECT DID AS ID,DPID AS PID,DNAME AS NAME,DNAME AS TITLE,DLVIE as LEVE FROM NK_SYS_DEPT");
 		if(msg!=null)
 			request.setAttribute("msg", $L(msg));

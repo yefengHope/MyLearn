@@ -8,14 +8,14 @@
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="connection.provider_class">org.noka.dbutil.DruidConnectionProvider</property>  
 		<property name="driverClassName">com.mysql.jdbc.Driver</property>
-		 <!-- 
-      	<property name="url">jdbc:mysql://172.16.1.64:5506/NK_BMS?useUnicode=true&amp;autoReconnect=true&amp;characterEncoding=UTF-8&amp;useOldAliasMetadataBehavior=true</property>
+		 
+      	<!-- <property name="url">jdbc:mysql://172.16.1.64:5506/NK_BMS?useUnicode=true&amp;autoReconnect=true&amp;characterEncoding=UTF-8&amp;useOldAliasMetadataBehavior=true</property>
       	<property name="username">bms</property>
-      	<property name="password">bms01</property>
-      	 -->
-      	<property name="url">jdbc:mysql://127.0.0.1:4391/NK_BASE?useUnicode=true&amp;autoReconnect=true&amp;characterEncoding=UTF-8&amp;useOldAliasMetadataBehavior=true</property>
+      	<property name="password">bms01</property> -->
+      	
+      	<property name="url">jdbc:mysql://127.0.0.1:3306/NK_BMS?useUnicode=true&amp;autoReconnect=true&amp;characterEncoding=UTF-8&amp;useOldAliasMetadataBehavior=true</property>
       	<property name="username">root</property>
-      	<property name="password">01</property>
+      	<property name="password">hanfeng111222!@#</property>
       	<property name="initialSize">200</property>
       	<property name="minIdle">200</property>
       	<property name="maxActive">1000</property>
@@ -38,5 +38,7 @@
 		<mapping resource="org/noka/item/RoleItem.hbm.xml"/>
 		<mapping resource="org/noka/item/DlForRoleItem.hbm.xml"/>
 		<mapping resource="org/noka/item/TestItem.hbm.xml"/>
+		<mapping resource="org/noka/item/ipr/CustomerInfoItem.hbm.xml"/>
+		<mapping resource="org/noka/item/ipr/ContactsInfoItem.hbm.xml"/>
 	</session-factory>
 </hibernate-configuration>
