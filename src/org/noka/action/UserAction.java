@@ -36,7 +36,6 @@ public class UserAction extends BaseAction{
 	 * 系统登陆 
 	 * @return
 	 */
-	@ALog(msg="用户登陆",type=TYPE.ERROR,request={"user.usname","user.uspassword"})
 	@Action(value="login",results={@Result(name="login",location="main/login.jsp"),@Result(name="main_action",type="redirect",location="main.nk")})
 	public String login(){
 		String pass = "";

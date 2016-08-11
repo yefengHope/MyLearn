@@ -3,7 +3,7 @@
 	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="org.noka.item.ipr">
-<class name="CustomerInfoItem" table=" NK_OPE_CUSTOMERINFO">
+<class name="CustomerInfoItem" table="NK_OPE_CUSTOMERINFO">
 <id name="cuid">
 	<generator class="increment"/>
 </id>

@@ -16,9 +16,9 @@
       	<property name="url">jdbc:mysql://127.0.0.1:3306/NK_BMS?useUnicode=true&amp;autoReconnect=true&amp;characterEncoding=UTF-8&amp;useOldAliasMetadataBehavior=true</property>
       	<property name="username">root</property>
       	<property name="password">hanfeng111222!@#</property>
-      	<property name="initialSize">200</property>
-      	<property name="minIdle">200</property>
-      	<property name="maxActive">1000</property>
+      	<property name="initialSize">20</property>
+      	<property name="minIdle">20</property>
+      	<property name="maxActive">100</property>
     	<property name="maxWait">60000</property>
     	<property name="timeBetweenEvictionRunsMillis">60000</property>
     	<property name="minEvictableIdleTimeMillis">300000</property>
