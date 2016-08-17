@@ -7,6 +7,7 @@ import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.TagSupport;
 
+import org.apache.commons.lang3.StringUtils;
 import org.noka.constvar.ConstVar;
 
 public class LanugeTlg extends TagSupport{
@@ -22,8 +23,11 @@ public class LanugeTlg extends TagSupport{
 			bsr = ConstVar.LANGUAGES_STR.get(request.getAttribute("syslanuage")).get(key);
 		}catch(Exception se){
 		}
-		if(bsr == null)
+		if(bsr == null && StringUtils.isNotEmpty(key)){
+			bsr = key;
+		}else if(bsr == null || StringUtils.isEmpty(key)){
 			bsr = "NoFind";
+		}
 		JspWriter jspOut = pageContext.getOut();
 		StringBuilder bodystr = new StringBuilder();
 		if(value!=null)

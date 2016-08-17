@@ -5,7 +5,7 @@
 <hibernate-mapping package="org.noka.item">
 <class name="TreeBookItem" table="NK_SYS_TREEBOOK">
 <id name="tid">
-	<generator class="increment"/>
+	<generator class="org.noka.dbutil.IDWorker"/>
 </id>
 <property name="tpid"  />
 <property name="tname"  />

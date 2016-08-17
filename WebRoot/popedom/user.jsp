@@ -4,6 +4,7 @@
     <title></title>
 	<%@ include file="/inc/inc.jsp"%>
 	<n:script src="script/popedom/user.js"></n:script>
+	<n:link href="skins/css/body.css" rel="stylesheet"></n:link>
   </head>
 <body>
 <script type="text/javascript">
@@ -12,12 +13,12 @@ lang.U2='${org.user.jsp.suer}';
 lang.U3='${org.user.jsp.dbpasserro}';
 lang.U4='${org.user.jsp.squro}';
 </script>
-<div style="height: 30%">
+<div style="height: 40%">
 <!-- 表单 start-->
 <n:form action="" method="post" id="wordbookform" name="wordbookform" onfailure="onfailure" onsuccess="onsuccess" labeldefaultwidth="60px" inputdefaultwidth="180px">
 <n:Hiddens json="[{name:'user.usid',id:'usid_id'},{name:'idname',id:'idname_id',value:'1'},{name:'muid',id:'muid_id',value:'${muid}'},{name:'idname',id:'idname_id'}]" id="hidden_ids"></n:Hiddens>
 <n:frow>
-<n:fcell label="${org.user.jsp.usern}：">
+<n:fcell label="${org.user.jsp.empployeeno}：">
 <n:InputText  disabled="${b:ButIf('add||update','no:disabled')}"  name="user.usname" id="usname_id" maxlength="20" allownull="false"  mesg="${org.noka.sys.nonullorin}"  ondblclick="DoubleClickClear(this);"/>
 </n:fcell>
 <n:fcell label="${org.myuser.jsp.name}：">
@@ -51,13 +52,18 @@ lang.U4='${org.user.jsp.squro}';
     <n:fcell label="${org.user.jsp.isstr}：">
     <n:Radios name="user.uspass" width="140" disabled="${b:ButIf('add||update','no:disabled')}" id="isstart" value="1" json="[{value:'1',label:'${org.noka.sys.yes}'},{value:'0',label:'${org.noka.sys.no}'}]"></n:Radios>
     </n:fcell>
-    <n:fcell label="${org.user.jsp.deptur}：">
+    <n:fcell label="${org.user.jsp.workn}：">
     <n:treeselect  id="uswork_id" spid="-1" readonly="${b:ButIf('add||update','no:readonly')}"  name="user.uswork"  sql="${deptsql}" allownull="false"/>
 	</n:fcell>
 	<n:fcell label="${org.user.jsp.usfugle}：">
     <n:selecbutton width="135" allownull="false" id="usfugle_id" bwidth="700" bheight="450" name="user.usfugle" readonly="${b:ButIf('add||update','no:readonly')}">${rooturl}/userselect.nk?sid=0&s=usfugle_s&v=usfugle_id</n:selecbutton>
 	</n:fcell>
  </n:frow>
+   <n:frow>
+   		<n:fcell label="${org.user.jsp.orgn}：">
+	    <n:treeselect  id="usgroup_id" spid="-1"  readonly="${b:ButIf('add||update','no:readonly')}"  name="user.usgroup"  sql="${gropusql}" allownull="false"/>
+		</n:fcell>
+ 	</n:frow>
    <n:frow>
     <n:fcell label="${org.word.jsp.notes}：">
     <n:Textarea width="906" name="user.ustext" id="ustext_id" disabled="${b:ButIf('add||update','no:disabled')}"></n:Textarea>
@@ -75,7 +81,7 @@ lang.U4='${org.user.jsp.squro}';
 <div style="width:98%;height: 60%;">
 <!-- 表单 end -->
 <n:DBGrid 
-	inputData="[{field:'usid_id',value:2},{field:'usname_id',value:3,veri:true},{field:'usxname_id',value:4,veri:true},{field:'ussex_id',value:16},{field:'usborth_id',value:11},{field:'usmoble_id',value:6},{field:'ustel_id',value:7},{field:'usemail_id',value:8},{field:'isstart',value:13},{field:'ustext_id',value:12},{field:'uspassword_id',value:14,veri:true},{field:'uspassword_id2',value:14,veri:true},{field:'idname_id',value:14},{field:'uswork_id',value:15},{field:'usfugle_id',value:17,show:18}]"
+	inputData="[{field:'usid_id',value:2},{field:'usname_id',value:3,veri:true},{field:'usxname_id',value:4,veri:true},{field:'ussex_id',value:16},{field:'usborth_id',value:11},{field:'usmoble_id',value:6},{field:'ustel_id',value:7},{field:'usemail_id',value:8},{field:'isstart',value:13},{field:'ustext_id',value:12},{field:'uspassword_id',value:14,veri:true},{field:'uspassword_id2',value:14,veri:true},{field:'idname_id',value:14},{field:'uswork_id',value:15},{field:'usfugle_id',value:17,show:18},{field:'usgroup_id',value:'USGROUP'}]"
 	width="1424" 
 	height="590"
 	id="wordDb"
@@ -89,7 +95,9 @@ lang.U4='${org.user.jsp.squro}';
     number="true"
 	sql="${sql}"
 	pagesize="40"
-	cells="width:0,show:4|width:120,show:1|width:180,show:1|width:60,show:1|width:120,show:1|width:120,show:1|width:120,show:1|width:200,show:1"
+	cells="width:0,show:4|width:120,show:1|width:180,show:1|width:60,show:1|width:120,show:1|width:120,show:1|width:120,show:1|width:200,show:1
+	|width:200,show:4|width:200,show:4|width:200,show:4|width:200,show:4|width:200,show:4|width:200,show:4|width:200,show:4|width:200,show:4|width:200,show:4|width:200,show:4
+	|width:200,show:1"
 	selectfiled="${org.user.jsp.usern} like '%$[d_name,${org.user.jsp.usern}]%' | and ${org.myuser.jsp.name} like '%$[d_c,${org.myuser.jsp.name}]%' | and USTEXT like '%$[d_text,${org.word.jsp.notes}]%'"
 	selectinput="true" 	
 	checkd="checkbox"
@@ -97,7 +105,7 @@ lang.U4='${org.user.jsp.squro}';
 	onrowdblclick="detail"
 	tableformAction="${rooturl}/userdel.nk"
 	hideselect="${b:ButIf('delete||popedom||start||stop','false:true')}"
-	formatcell=" org.noka.function.Function.KeyToValue(java.lang.String ${org.myuser.jsp.sex}) as ${org.myuser.jsp.sex} | org.noka.function.Function.getfugle(java.lang.String USFUGLEN) as USFUGLEN"
+	formatcell=" org.noka.function.Function.findDept(java.lang.String 组织机构) as 组织机构  | org.noka.function.Function.KeyToValue(java.lang.String ${org.myuser.jsp.sex}) as ${org.myuser.jsp.sex} | org.noka.function.Function.getfugle(java.lang.String USFUGLEN) as USFUGLEN"
 	custombutton="${b:but('delete',org.noka.sys.dell,'dellform()')}${b:but('start',org.user.jsp.str,'duserstart()')}${b:but('stop',org.user.jsp.sto,'userstop()')}${b:but('popedom',org.user.jsp.fprole,'popedoms()')}"
 	outpdfall="true"
 	outtitle="用户信息"

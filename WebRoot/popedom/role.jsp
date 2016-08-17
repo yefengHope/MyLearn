@@ -4,6 +4,7 @@
 		<title></title>
 		<%@ include file="/inc/inc.jsp"%>
 		<n:script src="script/popedom/role.js"></n:script>
+		<n:link href="skins/css/body.css" rel="stylesheet"></n:link>
 	</head>
 	<body>
 <script type="text/javascript">

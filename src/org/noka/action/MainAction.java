@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
-import org.noka.constvar.ConstVar;
 import org.noka.gson.Gson;
 import org.noka.item.MenuItem;
 import org.noka.item.MenuJSItem;
@@ -42,7 +41,7 @@ public class MainAction extends BaseAction{
 			for(MenuItem menuitem:menuItemList){
 				menuitem.setMenuname($L(menuitem.getMenuname()));
 				if(null!=menuitem.getMenuimage()){
-					String img =menuitem.getMenuimage().replace("${skin}",ConstVar.XMLCONST.get("skin")).replace("${rooturl}",request.getAttribute("rooturl").toString());
+					String img =menuitem.getMenuimage().replace("${rooturl}",request.getAttribute("rooturl").toString());
 					menuitem.setMenuimage(img);
 				}
 				JSMenuList.add(new MenuJSItem(String.valueOf(menuitem.getMenuid()), menuitem.getMenuname(), menuitem.getMenuurl(), menuitem.getMenuimage(), menuitem.getMenutarget()));
@@ -63,7 +62,7 @@ public class MainAction extends BaseAction{
 					}
 					murl=murl+"&d="+System.currentTimeMillis();
 					if($L(menuItem.getMenuname())!=null){
-						String img = menuItem.getMenuimage().replace("${skin}",ConstVar.XMLCONST.get("skin")).replace("${rooturl}",request.getAttribute("rooturl").toString());
+						String img = menuItem.getMenuimage().replace("${rooturl}",request.getAttribute("rooturl").toString());
 						subJSMenuList.add(new MenuJSItem(String.valueOf(menuItem.getMenuid()), $L(menuItem.getMenuname()), menuItem.getMenuurl(), img, menuItem.getMenutarget()));
 					}
 				}
@@ -86,7 +85,7 @@ public class MainAction extends BaseAction{
 							}
 							murl=murl+"&d="+System.currentTimeMillis();
 							if($L(menuItem.getMenuname())!=null){
-								String img = menuItem.getMenuimage().replace("${skin}",ConstVar.XMLCONST.get("skin")).replace("${rooturl}",request.getAttribute("rooturl").toString());
+								String img = menuItem.getMenuimage().replace("${rooturl}",request.getAttribute("rooturl").toString());
 								subJSMenuList.add(new MenuJSItem(String.valueOf(menuItem.getMenuid()), $L(menuItem.getMenuname()), murl, img, menuItem.getMenutarget()));
 							}
 						}

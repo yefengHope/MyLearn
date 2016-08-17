@@ -36,6 +36,7 @@ public class UserAction extends BaseAction{
 	 * 系统登陆 
 	 * @return
 	 */
+	@ALog(msg="用户登陆",type=TYPE.INFO,request={"user.usname","user.uspassword"})
 	@Action(value="login",results={@Result(name="login",location="main/login.jsp"),@Result(name="main_action",type="redirect",location="main.nk")})
 	public String login(){
 		String pass = "";
@@ -80,7 +81,7 @@ public class UserAction extends BaseAction{
 				uspasswlist.add(new DataWhere("username",user.getUsname()));//用户名
 				UserItem userpass = (UserItem)DataUtil.object("from UserItem where usname=:username and  uspass=1 ",uspasswlist);
 				
-				if(username==null){//没有该用户
+				if(null==username){//没有该用户
 					request.setAttribute("erro",$L("org.login.jsp.OuputNoUser"));
 					return "login";
 				}else if(userpass==null){//该用户被禁用
@@ -146,11 +147,10 @@ public class UserAction extends BaseAction{
 	public String userman(){
 		HttpServletRequest request = ServletActionContext.getRequest();
 		String SQL="SELECT USID AS "+$L("org.word.jsp.id")+",USNAME AS "+$L("org.user.jsp.usern")+", USXNAME AS "+$L("org.myuser.jsp.name")+",USSEX AS "+$L("org.myuser.jsp.sex")+",USMOBLE AS "+$L("org.myuser.jsp.moble")+",USTEL AS "+$L("org.myuser.jsp.tel")+",USEMAIL AS "+$L("org.myuser.jsp.email")+", DNAME AS "+$L("org.user.jsp.deptur")+", " +
-		"USWORK,USBORTH AS "+$L("org.myuser.jsp.bro")+",USTEXT,USPASS,USPASSWORD,DID,USSEX,USFUGLE,USFUGLE as USFUGLEN FROM NK_SYS_USERINFO ,NK_SYS_DEPT WHERE USWORK=DID ";
-		
+		"USWORK,USBORTH AS "+$L("org.myuser.jsp.bro")+",USTEXT,USPASS,USPASSWORD,DID,USSEX,USFUGLE,USFUGLE as USFUGLEN ,USGROUP,USGROUP as 组织机构    FROM NK_SYS_USERINFO ,NK_SYS_DEPT WHERE USWORK=DID ";
 		request.setAttribute("sql", sqlFilter(SQL, "NK_SYS_USERINFO"));
-		
-		request.setAttribute("deptsql","SELECT DID AS ID,DPID AS PID,DNAME AS NAME,DNAME AS TITLE,DLVIE as LEVE FROM NK_SYS_DEPT");
+		request.setAttribute("deptsql","SELECT DID AS ID,DPID AS PID,DNAME AS NAME,DNAME AS TITLE,DLVIE as LEVE FROM NK_SYS_DEPT");//资源组织
+		request.setAttribute("gropusql","SELECT ODID AS ID,ODPID AS PID,ODNAME AS NAME,ODNAME AS TITLE,ODLVIE as LEVE FROM NK_SYS_ODEPT");//组织机构
 		if(msg!=null)
 			request.setAttribute("msg", $L(msg));
 		return "popedom_user";
@@ -249,6 +249,7 @@ public class UserAction extends BaseAction{
 						useritem.setUstext(user.getUstext());
 						useritem.setUswork(user.getUswork());
 						useritem.setUsfugle(user.getUsfugle());
+						useritem.setUsgroup(user.getUsgroup());
 						DataUtil.update(useritem);
 						$P("3");
 					}else{

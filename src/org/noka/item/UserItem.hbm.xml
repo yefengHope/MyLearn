@@ -5,15 +5,13 @@
 <hibernate-mapping package="org.noka.item">
 <class name="UserItem" table="NK_SYS_USERINFO">
 <id name="usid">
-	<generator class="increment"/>
+	<generator class="org.noka.dbutil.IDWorker"/>
 </id>
 <property name="usname"  />
 <property name="uspassword"  />
-<property name="usdist"  />
 <property name="usxname"  />
 <property name="ussex"  />
 <property name="usborth"  />
-<property name="usbranch"  />
 <property name="usfugle"  />
 <property name="usmoble"  />
 <property name="ustel"  />
@@ -25,5 +23,7 @@
 <property name="uspass"  />
 <property name="userrtime"  />
 <property name="uswork"  />
+<property name="usimage"  />
+<property name="usgroup"  />
 </class>
 </hibernate-mapping>

@@ -1,3 +1,6 @@
+function $(a) {
+	return document.getElementById(a);
+}
 //---------表单验证------------------------
   function validate(a,b) {
 		if ($("id_name").value == ""){

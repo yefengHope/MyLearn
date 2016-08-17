@@ -217,5 +217,28 @@ public class Function {
 		}
 		return rv;
 	}
+	//-------------------------------------------------------------------------
+	public static String findDept(String v){
+		String rv="";
+		try{
+			if(v==null)
+				return rv;
+			Connection con = ServletNokaContext.getConnection();
+			PreparedStatement pst = con.prepareStatement("select ODNAME from NK_SYS_ODEPT where ODID=? ");
+			pst.setString(1,v);
+			ResultSet rs = pst.executeQuery();
+			if(rs.next()){
+				rv=rs.getString(1);
+			}else{
+				rv="";//未找到
+			}
+			rs.close();
+			pst.close();
+		}catch(Exception se){
+			rv="";//调用失败
+			se.printStackTrace();
+		}
+		return rv;
+	}
 //----------
 }

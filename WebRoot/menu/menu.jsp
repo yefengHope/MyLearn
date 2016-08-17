@@ -3,12 +3,8 @@
 <html>
   <head>
     <title></title>
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
 	<n:script src="script/menu/menu.js"></n:script>
+	<n:link href="skins/css/body.css" rel="stylesheet"></n:link>
   </head>
 <body>
 <b:lan key="org.word.jsp.name_${muid}" value="nk_tree_right"/>

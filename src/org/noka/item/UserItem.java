@@ -10,11 +10,9 @@ public class UserItem implements  Serializable {
 	private Long usid = null;// bigint identity ;
     private String usname = null;// varchar ;
     private String uspassword = null;// varchar ;
-    private Integer usdist = null;// int ;
     private String usxname = null;// varchar ;
     private String ussex = null;// varchar ;
     private Date usborth = null;// datetime ;
-    private Long usbranch = null;// bigint ;
     private Long usfugle = null;// bigint ;
     private String usmoble = null;// varchar ;
     private String ustel = null;// varchar ;
@@ -25,7 +23,9 @@ public class UserItem implements  Serializable {
     private Long uspost = null;// bigint ;
     private Integer uspass = null;// bit ;
     private Date userrtime = null;// int ;
-    private Long uswork = null;// bigint ;
+    private Long uswork = null;// bigint ; 所属资源组
+    private String usimage = null;// varchar ;USIMAGE
+    private Long usgroup = null;// varchar ;所属部门 (组织机构)
       public Long getUsid() {
      	return usid;
      }
@@ -44,12 +44,7 @@ public class UserItem implements  Serializable {
      public void setUspassword(String  uspassword) {
      	this.uspassword = uspassword;
      }
-      public Integer getUsdist() {
-     	return usdist;
-     }
-     public void setUsdist(Integer  usdist) {
-     	this.usdist = usdist;
-     }
+     
       public String getUsxname() {
      	return usxname;
      }
@@ -68,12 +63,7 @@ public class UserItem implements  Serializable {
      public void setUsborth(Date  usborth) {
      	this.usborth = usborth;
      }
-      public Long getUsbranch() {
-     	return usbranch;
-     }
-     public void setUsbranch(Long  usbranch) {
-     	this.usbranch = usbranch;
-     }
+     
       public Long getUsfugle() {
      	return usfugle;
      }
@@ -140,5 +130,18 @@ public class UserItem implements  Serializable {
 	public void setUswork(Long uswork) {
 		this.uswork = uswork;
 	}
+	public String getUsimage() {
+		return usimage;
+	}
+	public void setUsimage(String usimage) {
+		this.usimage = usimage;
+	}
+	public Long getUsgroup() {
+		return usgroup;
+	}
+	public void setUsgroup(Long usgroup) {
+		this.usgroup = usgroup;
+	}
+  
      
 }

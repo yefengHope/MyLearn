@@ -27,6 +27,8 @@ public class ConstVar {
 	public static Map<Long,List<Map<String,String>>> BUTTONS= new HashMap<Long,List<Map<String,String>>>();//按钮权限每一个list为一条记录
 	public static Map<String,String> CACHE_FILES=new HashMap<String,String>();//浏览器缓存
 	public static int BOX_SERVER_PORT = 9001;//tcp服务端口
+	public static int SERVER_MAIN_ID = 1;//服务器主版本号
+	public static int SERVER_SUB_ID=2;//服务器次版本号
 	
 	public final static String[] DBTABLE_SELECT = new String[]{
 		"{value:'1',label:'$[org.noka.sys.alldept]'}",

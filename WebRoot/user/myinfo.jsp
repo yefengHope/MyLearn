@@ -4,6 +4,7 @@
     <title></title>
 	<%@ include file="/inc/inc.jsp"%>
 	<n:script src="script/user/myinfo.js"></n:script>
+	<n:link href="skins/css/body.css" rel="stylesheet"></n:link>
   </head>
 <body>
 <!-- 表单 start-->

@@ -5,9 +5,11 @@ import java.io.PrintStream;
 import java.io.Writer;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.struts2.ServletActionContext;
+import org.apache.struts2.convention.annotation.Action;
 import org.noka.function.LanguageRead;
 import org.noka.gson.Gson;
 import org.noka.item.DlForRoleItem;
@@ -27,6 +29,12 @@ public class BaseAction extends ActionSupport{
 	protected String msg=null;//操作消息
 	protected String muid=null;//菜单id
 	
+	@Action(value="setnowurl")
+	public String login(){
+		HttpServletRequest request = ServletActionContext.getRequest();
+		request.getSession().setAttribute("nowurl", request.getParameter("nowurl"));
+		return null;
+	}
 	
 	public String getMsg() {
 		return msg;

@@ -5,7 +5,7 @@
 <hibernate-mapping package="org.noka.item">
 <class name="DeptItem" table="NK_SYS_DEPT">
 <id name="did">
-	<generator class="increment"/>
+	<generator class="org.noka.dbutil.IDWorker"/>
 </id>
 	<property name="dpid"/>
 	<property name="dname"/>

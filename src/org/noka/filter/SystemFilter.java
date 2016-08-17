@@ -124,6 +124,10 @@ public class SystemFilter implements Filter{
 					ConstVar.PUBLIC_URLS=en.getText();
 				}else if(en.getAttributeValue("key").equalsIgnoreCase("cache-file")){//缓存文件
 					ConstVar.CACHEFILE=("true".equalsIgnoreCase(en.getText()));
+				}else if(en.getAttributeValue("key").equalsIgnoreCase("server-manid")){//主版本号
+					ConstVar.SERVER_MAIN_ID=Integer.parseInt(null==en.getText()?"1":en.getText());
+				}else if(en.getAttributeValue("key").equalsIgnoreCase("server-subid")){//次版本号
+					ConstVar.SERVER_SUB_ID=Integer.parseInt(null==en.getText()?"2":en.getText());
 				}else{
 					ConstVar.XMLCONST.put(en.getAttributeValue("key"),en.getText());
 				}

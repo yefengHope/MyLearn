@@ -4,14 +4,13 @@
     <title></title>
 	<%@ include file="/inc/inc.jsp"%>
 	<n:script src="script/wordbook/input.js"></n:script>
-	<style type="text/css">
-	
-	</style>
+	<n:link href="skins/css/body.css" rel="stylesheet"></n:link>
   </head>
-<body style="padding-left: 30px;">
+<body>
 <b:lan key="org.word.jsp.name_${muid}" value="nk_word_input"/>
 <!-- 表单 start-->
 <div style="height:200px;">
+<n:form id="" ></n:form>
 <n:form action="" method="post" id="wordbookform" name="wordbookform" onsuccess="onsuccess" onfailure="onfailure">
 <n:Hiddens json="[{name:'wordBook.wid',id:'wid_id'},{name:'wordBook.wtype',value:'${muid}'},{name:'wordBook.wcworkdept',value:'${user.uswork}'},{name:'wordBook.wuser',value:'${user.usid}'}]" id="hidden_ids"></n:Hiddens>
 <n:frow>
@@ -48,7 +47,7 @@
 	onfailure="onfailure"
 	onsuccess="onsuccess"
 	sql="${sql}"
-	selectfiled="排序=  '$[ssss,排序]'| and  ${nk_word_input} like %$[wdname,${nk_word_input}]%  | #[ano,and^${org.noka.sys.tand}!or^${org.noka.sys.tor}]# ${org.word.jsp.notes} like '%$[d_c,${org.word.jsp.notes}]%'"
+	selectfiled="${nk_word_input} like %$[wdname,${nk_word_input}]%  | #[ano,and^${org.noka.sys.tand}!or^${org.noka.sys.tor}]# ${org.word.jsp.notes} like '%$[d_c,${org.word.jsp.notes}]%'"
 	selectinput="true" 
 	title="${org.word.jsp.wordlist}${b:ButIf('add||update',org.noka.sys.dbcortitle)}"
 	outtitle="打印标题"
@@ -58,7 +57,7 @@
 	checkd="checkbox"
 	onrowdblclick="detail"
 	checkvalue="0"
-	pagesize="20"
+	pagesize="3"
 	tableformid="id_dataform"
 	tableformAction="wordBookdel.nk"
 	compositor="WCDATE"
@@ -69,11 +68,7 @@
 	hideselect="${b:ButIf('delete','false:true')}"
 	custombutton="${b:but('delete',org.noka.sys.dell,'wordDb_ajaxSubmitDataForm()')}"
 	outfilename="基础字典表$[yyyy-MM-dd]"
-	editRow="true"
-	autosize="false"
-	editCells="[{cell:'名称',cfg:{type:'input',allownull:false}},{cell:'备注',cfg:{type:'input',allownull:false}}]"
 />
-<table border="1"></table>
 </div>
 </body>
 </html>

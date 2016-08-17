@@ -5,9 +5,8 @@ img{padding:0; margin:0; overflow:hidden;}
 **/
 .but{
 		cursor: pointer;
-		background-color: #ffffff;
+		background-color: #5bc0de;
 		color: #333;
-	    border-color: #CCC;
 	    border: 1px solid #dddddd;
 	    height: 24px;
 	    line-height: 24px;
@@ -16,6 +15,10 @@ img{padding:0; margin:0; overflow:hidden;}
 	    padding-left:6px;
 	    padding-right:6px;
 	    margin-left: -1px;
+	     -moz-border-radius:3px;      /* Gecko browsers */
+    	-webkit-border-radius:3px;   /* Webkit browsers */
+    	border-radius:3px;  
+    	font-size: 12px;
 }
 .but:hover{
 		cursor: pointer;
@@ -28,6 +31,10 @@ img{padding:0; margin:0; overflow:hidden;}
 	     padding-left:6px;
 	    padding-right:6px;
 	    margin-left: -1px;
+	    -moz-border-radius:3px;      /* Gecko browsers */
+    	-webkit-border-radius:3px;   /* Webkit browsers */
+    	border-radius:3px;  
+    	font-size: 12px;
 }
 /**
 * 输入框样式
@@ -35,3 +42,338 @@ img{padding:0; margin:0; overflow:hidden;}
 .text{
 	border:1px solid #AFAFAF;
 }
+/** ================================================================================================================================**/
+body,div,tr,td,table{
+    font-size:12px;
+    }
+	.nk_select_div{
+		
+	}
+	.nk_dbgrid_div{
+	 	border-top: solid 1px #e1e6eb;
+		border-left: solid 1px #e1e6eb;
+		border-right: solid 1px #e1e6eb;
+		border-bottom: solid 1px #e1e6eb;
+		position: relative;
+	}
+	.nk_title_div{
+		z-index: 100;
+		margin: 0;
+		overflow:hidden;
+		position: relative;
+	}
+	.nk_head_div{
+		background-color:#f5f6fa;
+    	border-spacing: 1px;
+    	margin: 0;
+    	overflow: hidden;
+     	border-bottom: solid 1px #e1e6eb;
+     	border-top: solid 1px #e1e6eb;
+     	position: relative;
+	}
+	.nk_body_div{
+ 		overflow:auto;
+ 		background: none repeat scroll 0 0 #8F8F9A;
+    	border-spacing: 1px;
+    	margin: 0;
+    	position: relative;
+	}
+	.nk_bottom_div{
+		border-top: solid 1px #e1e6eb;
+		overflow:hidden;
+	}
+	.nk_title_table{
+		background-color: #e1e6eb;
+		padding: 0;
+		margin:0px;
+	}
+	.nk_head_table{
+		padding: 0;
+		word-break:break-all;
+		margin:0px;
+	}
+	.nk_data_table{
+		background-color: #e1e6eb;
+		word-break:break-all;
+		padding: 0;
+		margin:0px;
+	}
+	.nk_bottom_table{
+		background-color: #e1e6eb;
+		padding: 0;
+	}
+	.nk_title{
+		 background-color:#f5f6fa;
+		 height:24px;
+		 overflow:hidden;
+		 word-break:break-all;
+	}
+	.nk_head{
+		 background-color:#f5f6fa;
+		 height:24px;
+		 font-size: 12px;
+		 word-break:break-all;
+		 padding: 0;
+		 text-align: left;
+		 border-right: solid 1px #e1e6eb;
+	}
+	/* 偶数行 */
+	.data_cell_0{
+		 background-color: #FFFFFF;
+		 height:24px;
+		 font-size: 12px;
+		 word-break:break-all;
+		 padding: 0;
+		 text-align: left;
+		 border-right: solid 1px #e1e6eb;
+		 border-bottom: solid 1px #e1e6eb;
+		 border-top: solid 1px #e1e6eb;
+	 }
+	 /* 奇数行 */
+	.data_cell_1{
+		 background-color: #FFFFFF;
+		 height:24px;
+		 font-size: 12px;
+		 word-break:break-all;
+		 text-align: left;
+		 padding: 0;
+		 overflow:hidden;
+		 border-right: solid 1px #e1e6eb;
+		 border-bottom: solid 1px #e1e6eb;
+		 border-top: solid 1px #e1e6eb;
+	 }
+	 /*警示行*/
+	 .data_row_1{
+		 background-color: #AAABFF;
+		 height:24px;
+		 width: 0px;
+		 font-size: 12px;
+		 word-break:break-all;
+		 padding: 0;
+	 }
+	  /*警示行*/
+	 .data_row_2{
+		 background-color: #FFFFFF;
+		 height:24px;
+		 width: 0px;
+		 font-size: 12px;
+		 word-break:break-all;
+		 padding: 0;
+	 }
+	 /* 分页信息 */
+	 .nk_page_cell_1{
+		background-color: #FFFFFF;
+		cursor: default;
+		height:24px;
+		line-height:24px;
+		background-color:#f5f6fa;
+	 }
+	 /* 图片 */
+	 .images_date{
+	 	border: 0;cursor: pointer;width: 16px;height: 19px;
+	 	margin-right:-3px;
+		vertical-align:-5px;
+		vertical-align:middle;
+	 }
+	 /* 图片 */
+	 .nk_sub_images{
+	 	border: 0;cursor: pointer;width: 16px;height: 16px;
+	 	margin-right:-3px;
+		vertical-align:-4px;
+	 }
+	 /* 图片 */
+	 .nk_images_but{
+	 	border: 0;cursor: pointer;width: 16px;height: 16px;
+	 	margin-right:0px;
+		vertical-align:-4px;
+		border:1px solid #333333;
+	 } 
+	  /* 排序图片 */
+	 .nk_asc_desc_images{
+	 	border: 0;cursor: pointer;width: 8px;height: 4px;
+	 	margin-right:0px;
+		vertical-align:0px;
+	 }
+	 .nk_cell_menu{
+	 	z-index: 999999;
+	 	border-top: solid 1px #e1e6eb;
+		border-right: solid 1px #e1e6eb;
+		border-bottom: solid 1px #e1e6eb;
+		background-color: #FFFFFF;
+	 }
+	 .nk_table_menu{
+		background-color: #FFFFFF;
+		border-bottom: solid 1px #e1e6eb;
+	 }
+	 .nk_menu_td_1{
+	 	border-top: solid 1px #e1e6eb;
+		border-left: solid 1px #e1e6eb;
+	 } 
+	 .nk_menu_td_2{
+	 	border-top: solid 1px #e1e6eb;
+		border-right: solid 1px #e1e6eb;
+	 }
+	 .nk_input_check{
+	 	margin-right:-2px;
+		vertical-align:-2px;
+	 }
+	 .nk_sub_td{
+	 	word-break:break-all;
+		padding: 0;
+		background-color: #FFFFFF;
+		border-top: solid 1px #e1e6eb;
+		border-left: solid 1px #e1e6eb;
+		border-right: solid 1px #e1e6eb;
+	 }
+	 /*采用自定义单元格时的div样式*/
+	 .nk_user_cell_div{
+	 	border: solid 1px #e1e6eb;
+	 	margin: 3px;
+	 	background-color:#FFFFFF;
+	 	cursor: pointer;
+	 }
+	 .select_button{
+	 	cursor: pointer;
+		background-color: #5bc0de;
+		color: #333;
+	    border: 1px solid #dddddd;
+	    height: 24px;
+	    line-height: 24px;
+	    position: relative;
+	    float: left;
+	    padding-left:6px;
+	    padding-right:6px;
+	    margin-left: -1px;
+	     -moz-border-radius:3px;      /* Gecko browsers */
+    	-webkit-border-radius:3px;   /* Webkit browsers */
+    	border-radius:3px;  
+    	font-size: 12px;
+	 }
+	 .select_button:hover{
+	 	cursor: pointer;
+		background-color: #09C;
+	    border: 1px solid #09C;
+	    height: 24px;
+	    line-height: 24px;
+	    position: relative;
+	    float: left;
+	     padding-left:6px;
+	    padding-right:6px;
+	    margin-left: -1px;
+	    -moz-border-radius:3px;      /* Gecko browsers */
+    	-webkit-border-radius:3px;   /* Webkit browsers */
+    	border-radius:3px;  
+    	font-size: 12px;
+	 }
+	 /*查询录入框样式*/
+	 .select_input{
+	   border: 1px solid #AFAFAF;
+	   height:19px;
+	   vertical-align:middle;
+	 }
+	 /*拖动列宽时的线*/
+	 .nk_resizeMarker{
+	   width: 1px;background-color: #000000;
+	 }
+	 /*自定义统计栏*/
+	 .nk_custom_div{
+	 	height:30px;
+	 }
+	 /*子表表体样式*/
+	 .subgrid_table{
+		background-color: #44B7A8;
+		padding: 0;
+		width: 100%;
+	}
+	/*子表表头行样式*/
+	.subgrid_head_tr{
+	}
+	/*子表表头单元格样式*/
+	.subgrid_head_td{
+	 background-color: #B4E1DC;
+	}
+	/*子表数据偶数行样式*/
+	.subgrid_cell_tr_0{
+	}
+	/*子表数据奇数行样式*/
+	.subgrid_cell_tr_1{
+	}
+	/*子表数据偶数行单元格样式*/
+	.subgrid_cell_0{
+	 background-color: #FFFFFF;
+	}
+	/*子表数据奇数行单元格样式*/
+	.subgrid_cell_1{
+	 background-color: #FFCCCC;
+	}
+	
+	.noka_grid_page_number_select{
+		color: #ffffff;
+		cursor: pointer;
+		background-color: #09C;
+	    border: 1px solid #09C;
+	    height: 10px;
+	    line-height: 10px;
+	    position: relative;
+	    float: left;
+	    padding: 6px 12px;
+	    margin-left: -1px;
+	}
+	.noka_grid_page_number{
+		cursor: pointer;
+		background-color: #ffffff;
+		color: #333;
+	    border-color: #CCC;
+	    border: 1px solid #dddddd;
+	    height: 10px;
+	    line-height: 10px;
+	    position: relative;
+	    float: left;
+	    padding: 6px 12px;
+	    margin-left: -1px;
+	}
+	.noka_grid_page_number_hover{
+		cursor: pointer;
+		background-color: #09C;
+	    border: 1px solid #09C;
+	    height: 10px;
+	    line-height: 10px;
+	    position: relative;
+	    float: left;
+	    padding: 6px 12px;
+	    margin-left: -1px;
+	}
+	
+	.noka_grid_page_img{
+		cursor: pointer;
+		background-color: #ffffff;
+	    border: 1px solid #dddddd;
+	    position: relative;
+	    padding: 3px 12px;
+	     float: left;
+	     width: 15px;
+	     height: 15px;
+	}
+	.noka_grid_page_img_hover{
+		cursor: pointer;
+		background-color: #09C;
+	    border: 1px solid #09C;
+	    position: relative;
+	    padding: 3px 12px;
+	     float: left;
+	     width: 15px;
+	     height: 15px;
+	}
+	a:hover {
+	color: #000000;
+	}
+	a:visited {
+		color: #000000;
+	}
+	a:link {
+		color: #000000;
+	}
+	a {
+		color: #000000;
+		text-decoration: none;
+	}

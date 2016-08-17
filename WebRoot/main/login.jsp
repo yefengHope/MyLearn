@@ -5,17 +5,18 @@
 <%@ include file="/inc/nosession_inc.jsp"%>
 <title>${org.noka.sys.Projectname}</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="renderer" content="webkit">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0" />
 <link rel="shortcut icon" type="image/x-icon" href="${rooturl}/main/noka.ico"/>
 <n:link rel="stylesheet" type="text/css" href="skins/css/bootstrap.min.css"/>
 <n:link rel="stylesheet" type="text/css" href="skins/css/login.css"></n:link>
 <n:script src="script/login/login.js"></n:script>
 </head>
-<body>
+<body style="background-color:#3C3B40">
 <div class="box">
 		<div class="login-box">
 			<div class="login-title text-center">
-				<h1><small>BMS</small></h1>
+				<h1><small>顶呱呱业务管理系统</small></h1>
 			</div>
 			<div class="login-content ">
 			<div class="form">
@@ -23,8 +24,8 @@
 				<div class="form-group">
 					<div class="col-xs-12  ">
 						<div class="input-group">
-							<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-							<input type="text" name="user.usname" id="id_name"  class="form-control" placeholder="用户名"/>
+							<span class="input-group-addon"><span class="glyphicon glyphicon-user">&nbsp;</span></span>
+							<input type="text" name="user.usname" id="id_name"  class="form-control" placeholder="请输入用户名"/>
 						</div>
 					</div>
 				</div>
@@ -32,13 +33,13 @@
 					<div class="col-xs-12  ">
 						<div class="input-group">
 							<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-							<input  type="password"  name="user.uspassword" id="id_password" class="form-control"/>
+							<input  type="password"  name="user.uspassword" id="id_password" class="form-control" placeholder="请输入密码"/>
 						</div>
 					</div>
 				</div>
 				<div class="form-group form-actions">
 					<div class="col-xs-4 col-xs-offset-4 ">
-						<button type="submit" class="btn btn-sm btn-info"><span class="glyphicon glyphicon-off"></span> 登录</button>
+						<button type="submit" class="btn btn-sm btn-info">登录</button>
 					</div>
 				</div>
 				<div class="form-group erromsg">

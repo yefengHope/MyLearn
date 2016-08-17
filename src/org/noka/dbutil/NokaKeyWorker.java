@@ -1,6 +1,7 @@
 package org.noka.dbutil;
 public class NokaKeyWorker {
 	private final static long twepoch = 12888349746579L;
+	private static NokaKeyWorker NOKAKEYWORKER= null;
 	// 机器标识位数
 	private final static long workerIdBits = 5L;
 	// 数据中心标识位数
@@ -22,9 +23,15 @@ public class NokaKeyWorker {
 	private long sequence = 0L;
 	private final long workerId;
 	private final long datacenterId;
-
 	
-	public NokaKeyWorker(long workerId, long datacenterId) {
+	public static NokaKeyWorker Init(long workerId, long datacenterId){
+		if(null==NOKAKEYWORKER){
+			NOKAKEYWORKER = new NokaKeyWorker(workerId,datacenterId);
+		}
+		return NOKAKEYWORKER;
+	}
+	
+	private NokaKeyWorker(long workerId, long datacenterId) {
 		if (workerId > maxWorkerId || workerId < 0) {
 			throw new IllegalArgumentException("worker Id can't be greater than %d or less than 0");
 		}

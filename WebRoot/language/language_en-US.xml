@@ -127,6 +127,9 @@
 <option key="sto" ><![CDATA[Disable]]></option>
 <option key="str" ><![CDATA[Enabled]]></option>
 <option key="usern" ><![CDATA[Username]]></option>
+<option key="empployeeno" ><![CDATA[工号]]></option>
+<option key="workn" ><![CDATA[资源组织]]></option>
+<option key="orgn" ><![CDATA[组织机构]]></option>
 <option key="pass" ><![CDATA[Password]]></option>
 <option key="dpass" ><![CDATA[Repeat Password]]></option>
 <option key="deptur" ><![CDATA[Department]]></option>

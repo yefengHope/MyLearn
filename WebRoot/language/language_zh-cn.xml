@@ -67,8 +67,6 @@
 <option key="batsub" description="系统管理"><![CDATA[表单管理]]></option>
 <option key="ather" description="系统管理"><![CDATA[其它]]></option>
 <option key="menuadmin" description="菜单管理"><![CDATA[菜单管理]]></option>
-<option key="customer" description="客户管理"><![CDATA[客户管理]]></option>
-<option key="customerlist" description="客户管理"><![CDATA[客户列表]]></option>
 </page>
 <page id="org.login.jsp" description="登录界面信息">
 <option key="username" description="用户名"><![CDATA[用户名]]></option>
@@ -129,6 +127,9 @@
 <option key="sto" ><![CDATA[禁用]]></option>
 <option key="str" ><![CDATA[启用]]></option>
 <option key="usern" ><![CDATA[用户名]]></option>
+<option key="empployeeno" ><![CDATA[工号]]></option>
+<option key="workn" ><![CDATA[资源组织]]></option>
+<option key="orgn" ><![CDATA[组织机构]]></option>
 <option key="pass" ><![CDATA[密码]]></option>
 <option key="dpass" ><![CDATA[重复密码]]></option>
 <option key="deptur" ><![CDATA[所属部门]]></option>

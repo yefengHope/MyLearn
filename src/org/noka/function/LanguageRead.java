@@ -1,5 +1,6 @@
 package org.noka.function;
 
+import org.apache.commons.lang3.StringUtils;
 import org.noka.constvar.ConstVar;
 import org.nokatag.system.ServletNokaContext;
 
@@ -15,8 +16,11 @@ public class LanguageRead {
 			bstr = ConstVar.LANGUAGES_STR.get(ServletNokaContext.getRequest().getAttribute("syslanuage")).get(key);
 		}catch(Exception se){
 		}
-		if(bstr==null)
+		if(bstr == null && StringUtils.isNotEmpty(key)){
+			bstr = key;
+		}else if(bstr == null || StringUtils.isEmpty(key)){
 			bstr = "NoFind";
+		}
 		return bstr;
 	}
 	public static String getLang(String mark,String key){
@@ -25,8 +29,11 @@ public class LanguageRead {
 			bstr = ConstVar.LANGUAGES_STR.get(mark).get(key);
 		}catch(Exception se){
 		}
-		if(bstr==null)
+		if(bstr == null && StringUtils.isNotEmpty(key)){
+			bstr = key;
+		}else if(bstr == null || StringUtils.isEmpty(key)){
 			bstr = "NoFind";
+		}
 		return bstr;
 	}
 }

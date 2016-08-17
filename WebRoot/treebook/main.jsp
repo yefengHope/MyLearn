@@ -4,12 +4,13 @@
     <title></title>
 	<%@ include file="/inc/inc.jsp"%>
 	<n:script src="script/treebook/treebook.js"></n:script>
+	<n:link href="skins/css/body.css" rel="stylesheet"></n:link>
   </head>
 <body>
 <b:lan key="org.word.jsp.name_${muid}" value="nk_tree_right"/>
 <div>
 <div style="float: left;height:98%;">
-	<n:tree id="treewod" sql="${tsql}" spid="-1" updServerFunction="UPDATE NK_SYS_TREEBOOK set TPID =? ,TLVIE=? WHERE TID =?" titleonclick="tree_titileclick"  />
+	<n:tree id="treewod" sql="${tsql}" level="1" spid="-1" updServerFunction="UPDATE NK_SYS_TREEBOOK set TPID =? ,TLVIE=? WHERE TID =?" titleonclick="tree_titileclick"  />
 </div>
 <div style="float: left;width:88%;">
 <div style="height: 20%;">

@@ -8,18 +8,19 @@
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="connection.provider_class">org.noka.dbutil.DruidConnectionProvider</property>  
 		<property name="driverClassName">com.mysql.jdbc.Driver</property>
-		 
-      	<!-- <property name="url">jdbc:mysql://172.16.1.64:5506/NK_BMS?useUnicode=true&amp;autoReconnect=true&amp;characterEncoding=UTF-8&amp;useOldAliasMetadataBehavior=true</property>
-      	<property name="username">bms</property>
-      	<property name="password">bms01</property> -->
-      	
-      	<property name="url">jdbc:mysql://127.0.0.1:3306/NK_BMS?useUnicode=true&amp;autoReconnect=true&amp;characterEncoding=UTF-8&amp;useOldAliasMetadataBehavior=true</property>
-      	<property name="username">root</property>
-      	<property name="password">hanfeng111222!@#</property>
-      	<property name="initialSize">20</property>
+		
+<!--      	<property name="url">jdbc:mysql://192.168.1.117:3306/NK_NBMS?useUnicode=true&amp;useSSL=false&amp;autoReconnect=true&amp;characterEncoding=UTF-8&amp;useOldAliasMetadataBehavior=true</property>-->
+<!--      	<property name="username">nbms</property>-->
+<!--      	<property name="password"><![CDATA[nbMs*&we%dd09]]></property>-->
+
+
+		<property name="url">jdbc:mysql://127.0.0.1:3306/NK_BMS?useUnicode=true&amp;autoReconnect=true&amp;characterEncoding=UTF-8&amp;useOldAliasMetadataBehavior=true</property>
+		<property name="username">root</property>
+		<property name="password">hanfeng111222!@#</property>
+      	<property name="initialSize">10</property>
       	<property name="minIdle">20</property>
       	<property name="maxActive">100</property>
-    	<property name="maxWait">60000</property>
+    	<property name="maxWait">6000</property>
     	<property name="timeBetweenEvictionRunsMillis">60000</property>
     	<property name="minEvictableIdleTimeMillis">300000</property>
       	<property name="validationQuery">SELECT 'x'</property>
@@ -37,8 +38,5 @@
 		<mapping resource="org/noka/item/PopedomswardItem.hbm.xml"/>
 		<mapping resource="org/noka/item/RoleItem.hbm.xml"/>
 		<mapping resource="org/noka/item/DlForRoleItem.hbm.xml"/>
-		<mapping resource="org/noka/item/TestItem.hbm.xml"/>
-		<mapping resource="org/noka/item/ipr/CustomerInfoItem.hbm.xml"/>
-		<mapping resource="org/noka/item/ipr/ContactsInfoItem.hbm.xml"/>
 	</session-factory>
 </hibernate-configuration>
