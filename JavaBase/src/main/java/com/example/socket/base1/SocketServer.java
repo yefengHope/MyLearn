@@ -33,6 +33,7 @@ public class SocketServer {
                     System.out.println("【服务端收到消息】：" + text.toString());
                     try (PrintWriter printWriter = new PrintWriter(socket.getOutputStream());) {
                         printWriter.println(text.toString());
+                        printWriter.flush();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
